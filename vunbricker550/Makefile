@@ -4,13 +4,13 @@
 TARGET = resurrection
 OBJS = crt0.o main.o install.o nandoperations.o flash_format.o idstools.o dump.o tools.o ./S/DcManager.o ./S/pspPSAR.o ./S/pspDecrypt.o ./S/pspIplUpdate.o ./S/idsRegeneration.o
 
-INCDIR = ../include
+INCDIR = ./include
 CFLAGS = -O2 -G0 -DPSPFW3xx -Wall -fshort-wchar -fno-pic -mno-check-zero-division 
 CXXFLAGS = $(CFLAGS) -fno-exceptions -fno-rtti
 ASFLAGS = $(CFLAGS) -c
 
-LIBDIR =
-LDFLAGS = -mno-crt0 -nostdlib -nodefaultlibs
+LIBDIR = ./lib
+LDFLAGS = -nostdlib -nodefaultlibs
 LIBS = -lpsppower -lpsprtc -lvlfgui -lvlfgu -lvlfutils -lvlflibc -lpspreg -lpspsystemctrl_user -lpspkubridge -lpspwlan
 # -lpspusb -lpspusbstor
 
